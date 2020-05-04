@@ -8,6 +8,7 @@
 #include "src/maps/Downloader.h"
 #include <nlohmann/json_fwd.hpp>
 #include "src/avitab/apps/models/VatsimAtcModel.h"
+#include "src/avitab/apps/models/VatsimPilotModel.h"
 
 namespace avitab {
     class VatsimDataDownloader {
@@ -19,6 +20,8 @@ namespace avitab {
 
         // functions
         std::vector<VatsimAtcModel> getVatsimAtcList();
+
+        std::vector<VatsimPilotModel> getVatsimPilotList();
 
     private:
         // variables

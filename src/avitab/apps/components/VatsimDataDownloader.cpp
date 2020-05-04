@@ -19,6 +19,7 @@ namespace avitab {
     std::vector<VatsimAtcModel> VatsimDataDownloader::getVatsimAtcList() {
         std::vector<VatsimAtcModel> atcList;
         auto data = getVatsimData();
+
         auto clients = data.at("clients");
         for (auto it : clients) {
             if (it.at("clienttype") == ATC) {
@@ -31,12 +32,42 @@ namespace avitab {
                 atc.lon = it.at("longitude").get<float>();
                 atc.visualRange = it.at("visualrange").get<int>();
                 atc.loggedOnTime = it["time_logon"];
+
+                auto atisMessage = it.at("atis_message");
+                atc.atis = atisMessage.is_null() ? "" : atisMessage;
+
                 // push it onto the vector
                 atcList.push_back(atc);
             }
         }
-
         return atcList;
+    }
+
+    std::vector<VatsimPilotModel> VatsimDataDownloader::getVatsimPilotList() {
+        std::vector<VatsimPilotModel> pilotList;
+        auto data = getVatsimData();
+
+//        int m = 0;
+        auto clients = data.at("clients");
+        for (auto it : clients) {
+            if (it.at("clienttype") == PILOT) {
+                // create the model
+                VatsimPilotModel pilot;
+                pilot.callSign = it.at("callsign");
+                pilot.lat = it.at("latitude").get<float>();
+                pilot.lon = it.at("longitude").get<float>();
+                pilot.altitude = it.at("altitude").get<int>();
+                pilot.groundSpeed = it.at("groundspeed").get<unsigned int>();
+                pilot.heading = it.at("heading").get<unsigned int>();
+
+                auto aircraft = it.at("planned_aircraft");
+                pilot.aircraft = aircraft.is_null() ? "" : aircraft;
+
+                // push it onto the vector
+                pilotList.push_back(pilot);
+            }
+        }
+        return pilotList;
     }
 
     VatsimDataDownloader::~VatsimDataDownloader() = default;
