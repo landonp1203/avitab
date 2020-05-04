@@ -25,6 +25,7 @@
 #include "RouteApp.h"
 #include "MapApp.h"
 #include "NavigraphApp.h"
+#include "VatsimApp.h"
 #include "src/libimg/Image.h"
 
 namespace avitab {
@@ -47,6 +48,7 @@ AppLauncher::AppLauncher(FuncsPtr appFuncs):
         addEntry<NavigraphApp>("Navigraph", root + "navigraph.png", AppId::NAVIGRAPH);
     }
 
+    addEntry<VatsimApp>("Vatsim", root + "if_Help_1493288.png", AppId::VATSIM);
     addEntry<About>("About", root + "if_Help_1493288.png", AppId::ABOUT);
 }
 

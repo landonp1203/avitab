@@ -41,6 +41,8 @@
 [submodule "lib/libgeotiff"]
 	path = lib/libgeotiff
 	url = https://github.com/OSGeo/libgeotiff
+	ignore = dirty
 [submodule "lib/QuickJS"]
 	path = lib/QuickJS
 	url = https://github.com/ldarren/QuickJS/
+	ignore = dirty

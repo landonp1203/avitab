@@ -1,2 +1,5 @@
 build
 build-third
+
+.idea/
+cmake-build-debug
