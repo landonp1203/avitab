@@ -47,7 +47,6 @@ namespace avitab {
         std::vector<VatsimPilotModel> pilotList;
         auto data = getVatsimData();
 
-//        int m = 0;
         auto clients = data.at("clients");
         for (auto it : clients) {
             if (it.at("clienttype") == PILOT) {
