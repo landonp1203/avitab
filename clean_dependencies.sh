@@ -45,3 +45,8 @@ cd QuickJS
 git clean -d -x -f
 cd ..
 
+echo "Cleaning pugixml..."
+cd pugixml
+git clean -d -x -f
+cd ..
+

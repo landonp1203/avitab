@@ -115,4 +115,15 @@ if [ ! -f $OUTDIR/lib/libquickjs.a ]; then
 fi
 if [ ! -f $OUTDIR/lib/libquickjs.a ]; then echo "Failed"; exit; fi
 
+echo "Building tinyxml2..."
+if [ ! -f $OUTDIR/lib/libtinyxml2.so ]; then
+    cd tinyxml2
+    mkdir -p build
+    cd build
+    cmake -G "Unix Makefiles" -DCMAKE_C_FLAGS=-fPIC -DCMAKE_INSTALL_PREFIX="" ..
+    make -j10 DESTDIR=$OUTDIR install
+    cd ../../
+fi
+if [ ! -f $OUTDIR/lib/libtinyxml2.so ]; then echo "Failed"; exit; fi
+
 cd ..

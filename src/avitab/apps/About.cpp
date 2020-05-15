@@ -36,6 +36,7 @@ About::About(FuncsPtr appFuncs):
             "Uses the curl transfer library, copyright 1996-2018 by Daniel Stenberg\n"
             "Uses the detex library, copyright 2015 by Harm Hanemaaijer\n"
             "Uses the STB public domain libraries by Sean Barrett\n"
+            "Uses the tinyxml2 library, copyright 2020 by Lee Thomason\n"
             "\n"
             "Icon if_applications-internet_118835 copyright by Tango\n"
             "Icon if_Airport_22906 copyright by Icons-Land\n"

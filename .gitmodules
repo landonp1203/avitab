@@ -46,3 +46,7 @@
 	path = lib/QuickJS
     url = https://github.com/ldarren/QuickJS/
     ignore = dirty
+[submodule "lib/tinyxml2"]
+	path = lib/tinyxml2
+    url = https://github.com/leethomason/tinyxml2.git
+    ignore = dirty
