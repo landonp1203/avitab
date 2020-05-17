@@ -19,7 +19,7 @@
 #define SRC_MAPS_SOURCES_NAVIGRAPHSOURCE_H_
 
 #include "src/libimg/stitcher/TileSource.h"
-#include "src/maps/Downloader.h"
+#include "src/utils/Downloader.h"
 
 namespace maps {
 
@@ -55,7 +55,7 @@ private:
     std::string key;
     bool dayMode, highRoutes;
     bool cancelToken = false;
-    Downloader downloader;
+    utils::Downloader downloader;
 };
 
 } /* namespace maps */

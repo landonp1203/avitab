@@ -19,7 +19,7 @@
 #define SRC_MAPS_OPENTOPOSOURCE_H_
 
 #include "src/libimg/stitcher/TileSource.h"
-#include "src/maps/Downloader.h"
+#include "src/utils/Downloader.h"
 
 namespace maps {
 
@@ -51,7 +51,7 @@ public:
     std::string getCopyrightInfo() override;
 private:
     bool cancelToken = false;
-    Downloader downloader;
+    utils::Downloader downloader;
 };
 
 } /* namespace maps */

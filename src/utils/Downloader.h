@@ -23,7 +23,7 @@
 #include <string>
 #include <curl/curl.h>
 
-namespace maps {
+namespace utils {
 
 class Downloader {
 public:

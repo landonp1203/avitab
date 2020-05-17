@@ -22,7 +22,7 @@
 #include "Downloader.h"
 #include "src/Logger.h"
 
-namespace maps {
+namespace utils {
 
 Downloader::Downloader() {
     curl = curl_easy_init();
